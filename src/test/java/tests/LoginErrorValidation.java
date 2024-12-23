@@ -14,10 +14,10 @@ public class LoginErrorValidation extends BaseTest {
     public static String productName = "ZARA COAT 3";
 
     @Test
-    public void loginErrorValidation() throws IOException {
+    public void loginErrorValidation() {
 
         loginPage.loginToApplication("MohammedJaffer2@practise.com", "Password.101");
-        Assert.assertEquals(loginPage.getErrorMessage(), "Incorrect email or password.");
+        Assert.assertEquals(loginPage.getErrorMessage(), "Incorrect email r password.");
     }
 
     @Test
@@ -28,7 +28,7 @@ public class LoginErrorValidation extends BaseTest {
         productCatalogue.addProductToCart(productName);
 
         CartPage cartPage = productCatalogue.goToCartPage();
-        Boolean match = cartPage.verifyCartProducts("ZARA COAT 33");
+        Boolean match = cartPage.verifyCartProducts("ZARA COAT 3");
         Assert.assertTrue(match);
     }
 }
