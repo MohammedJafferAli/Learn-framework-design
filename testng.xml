@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--This runner file will execute all the tests in sequence means one after another -->
-<suite name="All Test Suite">
+<suite parallel="tests" name="All Test Suite">
+    <listeners>
+        <listener class-name="TestComponents.TestListener"/>
+    </listeners>
     <test verbose="2" preserve-order="true" name="/Users/mohammedjafferali/Documents/learn-framework-design/learn-framework-design">
     <classes>
         <class name="tests.LoginErrorValidation">

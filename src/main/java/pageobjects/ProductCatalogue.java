@@ -53,6 +53,4 @@ public class ProductCatalogue extends AbstractComponents {
         waitForElementToAppear(toastContainer);
         waitForElementToDisappear(ppAddedToCart);
     }
-
-
 }
