@@ -1,17 +1,16 @@
 package tests;
 
-import TestComponents.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobjects.CartPage;
 import pageobjects.ProductCatalogue;
+import testcomponents.BaseTest;
 
-import java.io.IOException;
 import java.util.List;
 
 public class LoginErrorValidation extends BaseTest {
-    public static String productName = "ZARA COAT 3";
+    public static String productName = "IPHONE 13 PRO";
 
     @Test
     public void loginErrorValidation() {
@@ -28,7 +27,7 @@ public class LoginErrorValidation extends BaseTest {
         productCatalogue.addProductToCart(productName);
 
         CartPage cartPage = productCatalogue.goToCartPage();
-        Boolean match = cartPage.verifyCartProducts("ZARA COAT 3");
+        Boolean match = cartPage.verifyCartProducts("IPHONE 13 PRO");
         Assert.assertTrue(match);
     }
 }

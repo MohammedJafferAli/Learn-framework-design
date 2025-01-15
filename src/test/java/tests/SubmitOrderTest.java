@@ -1,18 +1,19 @@
 package tests;
 
-import TestComponents.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageobjects.*;
+import testcomponents.BaseTest;
+import testcomponents.RetryListener;
 
 import java.io.IOException;
 import java.util.List;
 
 public class SubmitOrderTest extends BaseTest {
-    public static String productName = "ZARA COAT 3";
+    public static String productName = "IPHONE 13 PRO";
 
-@Test
+@Test(retryAnalyzer = RetryListener.class)
     public void submitOrder() throws IOException {
 
         ProductCatalogue productCatalogue = loginPage.loginToApplication("MohammedJaffer1@practise.com", "Password.1001");

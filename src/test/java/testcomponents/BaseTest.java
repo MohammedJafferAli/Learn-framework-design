@@ -1,4 +1,4 @@
-package TestComponents;
+package testcomponents;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -27,7 +27,10 @@ public class BaseTest {
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "//src//main//java//resources//GlobalData.properties");
         prop.load(fis);
-        String browserName = prop.getProperty("browser");
+        //String browserName = prop.getProperty("browser");
+
+        //browser value can be passed at the run time using maven command -Dbrowser replace below line for line 30
+        String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
 
         if (browserName.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();

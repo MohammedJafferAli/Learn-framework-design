@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--This runner file will execute all the tests in sequence means one after another -->
-<suite parallel="tests" name="All Test Suite">
+<suite parallel="tests" name="Regression">
     <listeners>
-        <listener class-name="TestComponents.TestListener"/>
+        <listener class-name="testcomponents.TestListener"/>
     </listeners>
     <test verbose="2" preserve-order="true" name="Error validation">
         <classes>
