@@ -16,7 +16,7 @@ public class LoginErrorValidation extends BaseTest {
     public void loginErrorValidation() {
 
         loginPage.loginToApplication("MohammedJaffer2@practise.com", "Password.101");
-        Assert.assertEquals(loginPage.getErrorMessage(), "Incorrect email r password.");
+        Assert.assertEquals(loginPage.getErrorMessage(), "Incorrect email or password.");
     }
 
     @Test

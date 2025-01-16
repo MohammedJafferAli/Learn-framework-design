@@ -1,9 +1,11 @@
 package testcomponents;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.AfterMethod;
@@ -32,8 +34,14 @@ public class BaseTest {
         //browser value can be passed at the run time using maven command -Dbrowser replace below line for line 30
         String browserName = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
 
-        if (browserName.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
+        if (browserName.contains("chrome")) {
+            ChromeOptions options = new ChromeOptions();
+           WebDriverManager.chromedriver().setup();
+           if(browserName.contains("headless"))
+           {
+               options.addArguments("headless");
+           }
+            driver = new ChromeDriver(options);
         } else if (browserName.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
         }
